@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Categories, Shams Salvatore">
+    <meta name="keywords" content="Category: 编程, Shams Salvatore">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Categories | Shams Salvatore</title>
+    <title>Category: 编程 | Shams Salvatore</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -282,7 +282,7 @@
                 
                 <a href="/categories/%E7%BC%96%E7%A8%8B/" title="编程: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #F9EBEA;">编程
                         <span class="tag-length">1</span>
                     </span>
@@ -296,65 +296,72 @@
 
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/11/22/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E6%8C%87%E9%92%88/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C语言—指针">
+                            
+                            <span class="card-title">C语言—指针</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                1、相关概念：
+指针就是地址，地址就是指针
+指针就是内存单元的编号
+指针变量是存放地址（指针）的变量
+指针和指针变量是两个不同的概念
+但是要注意，通常叙述时会把指针变量简称为指针，实际他们的含义不同。
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
+#include &lt;stdio
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: 'Post Categories Radar Chart',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"编程","max":2}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [1],
-                    name : 'Number of Categories'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-
-    
-
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                            <span class="chip bg-color">C语言</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%8C%87%E9%92%88/">
+                            <span class="chip bg-color">指针</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
