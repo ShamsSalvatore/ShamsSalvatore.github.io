@@ -6,7 +6,7 @@
   <link href="https://shamssalvatore.ltd/atom.xml" rel="self"/>
   
   <link href="https://shamssalvatore.ltd/"/>
-  <updated>2020-11-22T10:27:03.832Z</updated>
+  <updated>2021-10-09T07:27:47.678Z</updated>
   <id>https://shamssalvatore.ltd/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GNU/Linux学习笔记</title>
+    <link href="https://shamssalvatore.ltd/2021/10/09/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://shamssalvatore.ltd/2021/10/09/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-10-09T07:24:34.084Z</published>
+    <updated>2021-10-09T07:27:47.678Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;GNU-Linux学习笔记&quot;&gt;&lt;a href=&quot;#GNU-Linux学习笔记&quot; class=&quot;headerlink&quot; title=&quot;GNU/Linux学习笔记&quot;&gt;&lt;/a&gt;GNU/Linux学习笔记&lt;/h1&gt;&lt;h2 id=&quot;一、Linux概述&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://shamssalvatore.ltd/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Linux操作系统" scheme="https://shamssalvatore.ltd/tags/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo个人博客搭建常见问题</title>

@@ -1,0 +1,2272 @@
+<!DOCTYPE HTML>
+<html lang="Zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="GNU/Linux学习笔记, Salvatore">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>GNU/Linux学习笔记 | Salvatore</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Salvatore" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Salvatore</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Salvatore</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">GNU/Linux学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">Linux操作系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-10-09
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    7.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    28 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="GNU-Linux学习笔记"><a href="#GNU-Linux学习笔记" class="headerlink" title="GNU/Linux学习笔记"></a>GNU/Linux学习笔记</h1><h2 id="一、Linux概述"><a href="#一、Linux概述" class="headerlink" title="一、Linux概述"></a>一、Linux概述</h2><p>1、Unix来源：</p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/USIYAJZabDmrEtT.png" alt="image-20210425202930529"></p>
+<p>2、Linux来源：</p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/q1fucZQlW3YbAeH.png" alt="image-20210425203023633"></p>
+<p>3、Unix和Linux关系：</p>
+<p><img src="https://i.loli.net/2021/04/25/MaoXe1mOrRqF6YD.png" alt="image-20210425203122980"></p>
+<p>4、安装：</p>
+<p>一般都安装在Windows虚拟机Vmware上，傻瓜式安装。</p>
+<h2 id="二、重要知识点"><a href="#二、重要知识点" class="headerlink" title="二、重要知识点"></a>二、重要知识点</h2><p>1、网络链接的三种模式：</p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/h7o8y4iFz5WuVpw.png" alt="image-20210425203515271"></p>
+<p>2、Linux世界里，一切皆文件。</p>
+<p>3、绝对路径和相对路径：</p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/pCcvRloyWsfFQVS.png" alt="image-20210425214508415"></p>
+<h2 id="三、常用指令与功能"><a href="#三、常用指令与功能" class="headerlink" title="三、常用指令与功能"></a>三、常用指令与功能</h2><h3 id="1、目录结构"><a href="#1、目录结构" class="headerlink" title="1、目录结构"></a>1、目录结构</h3><ul>
+<li>/bin      （/usr/bin、/usr/local/bin）存放经常使用的命令</li>
+<li>/sbin      (/sur/sbin、/usr/local/sbin) 存放系统管理员使用的系统管理程序。</li>
+<li>/home   存放普通用户的主目录，Linux中每个用户都有自己的目录，以用户账号命名。</li>
+<li>/root   系统管理员的主目录。</li>
+<li>/lib   系统开机所需的动态共享库。</li>
+<li>/etc   所有系统管理所需的配置文件和子目录，如安装mysql数据库my.conf。</li>
+<li>/usr   存放用户的应用程序和文件，功能类似window下的program files。</li>
+<li>/opt   存放主机额外安装软件所安装的目录。一般通过编译源码的方式安装程序。</li>
+</ul>
+<h3 id="2、远程登陆到Linux"><a href="#2、远程登陆到Linux" class="headerlink" title="2、远程登陆到Linux"></a>2、远程登陆到Linux</h3><ul>
+<li>公司开发场景：</li>
+</ul>
+<p>一般是小组成员共享开发，项目运行在公网上，程序员需要远程登录到Linux进行管理和开发；常用工具有：Xshwll6（windows远程登录到公司的服务器，操作）、Xftp6（远程在服务器上传、下载文件）</p>
+<h3 id="3、Vim编辑器"><a href="#3、Vim编辑器" class="headerlink" title="3、Vim编辑器"></a>3、Vim编辑器</h3><p>Linux系统内置Vi编辑器，vim是vi的增强版</p>
+<ul>
+<li>vim的三种模式：<ul>
+<li>正常模式：以vim打开一个文档就可进入，如vim hello.java ，使用【上下左右】按键移动光标，可以【删除字符】或【删除整行】也可以【复制、粘贴】文件内容</li>
+<li>插入模式：要对文本进行编辑，输入i即可。</li>
+<li>命令行模式：输入esc再输入：即可。该模式可以读取、保存、替换、离开vim、显示行号等。</li>
+<li>各模式切换图：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/k9bYM2BEqWZHf7c.png" alt="image-20210425210238569"></p>
+<ul>
+<li>常用快捷键：</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/oRqvNSzOa2wXGkV.png" alt="image-20210425210533150"></p>
+<h3 id="4、关机-amp-重启"><a href="#4、关机-amp-重启" class="headerlink" title="4、关机&amp;重启"></a>4、关机&amp;重启</h3><pre class="line-numbers language-Linux"><code class="language-Linux">shutdown -h now 立刻关机
+shutdown -h 1 "hello,1分钟后会关机了"
+shutdown -r now 重启
+halt 关机
+reboot 重启
+sync 把内存数据同步到磁盘（建议关机前先运行此命令）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5、用户登录-amp-注销"><a href="#5、用户登录-amp-注销" class="headerlink" title="5、用户登录&amp;注销"></a>5、用户登录&amp;注销</h3><ul>
+<li>超级用户：root；如何由普通用户切换到root：“su - root”</li>
+<li>注销：logout</li>
+</ul>
+<h3 id="6、用户-amp-用户组管理"><a href="#6、用户-amp-用户组管理" class="headerlink" title="6、用户&amp;用户组管理"></a>6、用户&amp;用户组管理</h3><h4 id="（1）用户"><a href="#（1）用户" class="headerlink" title="（1）用户"></a>（1）用户</h4><ul>
+<li>添加账户:  useradd  用户名（此时默认在家目录创建用户）； user -d 指定目录</li>
+<li>指定/修改密码：passwd   用户名；</li>
+<li>显示当前用户所在目录：pwd；</li>
+<li>删除用户：userdel   用户名（删除用户但保留用户家目录）；userdel -r 用户名（删除家目录及其用户）</li>
+<li>查询用户信息：id 用户名；</li>
+<li>切换用户：su - 切换用户名   </li>
+<li>查看当前用户/登录用户：who am i</li>
+</ul>
+<h4 id="（2）用户组"><a href="#（2）用户组" class="headerlink" title="（2）用户组"></a>（2）用户组</h4><ul>
+<li>概念：系统对有共性\权限的多个用户进行统一管理。一般建立用户时，默认和建立者的组一致。</li>
+<li>新增组：groupadd   组名；</li>
+<li>删除组：groupdel   组名；</li>
+<li>为用户分配组：useradd -g 组名 用户名</li>
+<li>更改用户所在组：usermod -g 新组名 用户名</li>
+</ul>
+<h3 id="7、实用指令"><a href="#7、实用指令" class="headerlink" title="7、实用指令"></a>7、实用指令</h3><h4 id="（1）运行级别"><a href="#（1）运行级别" class="headerlink" title="（1）运行级别"></a>（1）运行级别</h4><p>0：关机；</p>
+<p>1：单用户【找回丢失密码】；</p>
+<p>2：多用户状态没有网络服务；</p>
+<p>==3：多用户状态有网络服务（非图形化界面，常用）；==</p>
+<p>4：系统未使用保留给用户；</p>
+<p>==5：图形界面（与3切换使用）；==</p>
+<p>6：系统重启；</p>
+<ul>
+<li>指令切换：init  [123456]</li>
+</ul>
+<h4 id="（2）ls指令"><a href="#（2）ls指令" class="headerlink" title="（2）ls指令"></a>（2）ls指令</h4><p>ls  [选项]  [目录或文件]</p>
+<ul>
+<li>常用选项：-a：显示所有文件和目录，包括隐藏目录  ； -l ：以列表的方式显示</li>
+</ul>
+<h4 id="（3）cd指令"><a href="#（3）cd指令" class="headerlink" title="（3）cd指令"></a>（3）cd指令</h4><ul>
+<li><p>cd <del>或者cd ：   回到自己的家目录，如你是root，cd</del>到 /root</p>
+</li>
+<li><p>cd.. 回到当前目录的上一级目录</p>
+</li>
+</ul>
+<h4 id="（4）创建目录mkdir"><a href="#（4）创建目录mkdir" class="headerlink" title="（4）创建目录mkdir"></a>（4）创建目录mkdir</h4><ul>
+<li>创建一个目录：mkdir /home/dog</li>
+<li>创建多级目录：mkdir -p /home/animal/tiger</li>
+</ul>
+<h4 id="（5）删除空目录rmdir"><a href="#（5）删除空目录rmdir" class="headerlink" title="（5）删除空目录rmdir"></a>（5）删除空目录rmdir</h4><ul>
+<li>删除空目录：rmdir   /home/dog</li>
+<li>==删除非空目录：rm -rf   /home/animal==</li>
+</ul>
+<h4 id="（6）创建文件touch"><a href="#（6）创建文件touch" class="headerlink" title="（6）创建文件touch"></a>（6）创建文件touch</h4><p>touch 文件名</p>
+<ul>
+<li>touch hello.txt</li>
+</ul>
+<h4 id="（7）复制cp"><a href="#（7）复制cp" class="headerlink" title="（7）复制cp"></a>（7）复制cp</h4><ul>
+<li>复制文件：cp   要复制的文件  目标文件夹</li>
+<li>复制文件夹：cp -r 要复制的文件夹 目标文件夹（系统不提示：\cp  -r  要复制的文件夹  目标文件夹）</li>
+</ul>
+<h4 id="（8）移动或重命名mv"><a href="#（8）移动或重命名mv" class="headerlink" title="（8）移动或重命名mv"></a>（8）移动或重命名mv</h4><ul>
+<li>重命名：mv  旧文件名or目录名  新文件名or目录名</li>
+<li>移动：mv 要移动的文件or目录地址  目标文件or目录地址</li>
+<li>例1：将/opt/bbb移动到home/下：mv   /opt/bbb  /home/</li>
+<li>例2：将hello.txt重命名为Hello.txt：mv  hello.txt  Hello.txt</li>
+</ul>
+<h4 id="（9）删除文件或目录rm"><a href="#（9）删除文件或目录rm" class="headerlink" title="（9）删除文件或目录rm"></a>（9）删除文件或目录rm</h4><ul>
+<li>删除文件：rm  文件</li>
+<li>删除文件夹（目录）：rm  -rf  非空或空文件夹</li>
+</ul>
+<h4 id="（10）查看文件内容cat"><a href="#（10）查看文件内容cat" class="headerlink" title="（10）查看文件内容cat"></a>（10）查看文件内容cat</h4><ul>
+<li>cat -n 要查看的文件（-n：显示行号）</li>
+<li>细节：1、cat只能浏览文件，而不能修改。2、一般会加上管道命令|more</li>
+<li>例：查看文件：cat -n /etc/profile | more[进行交互]（交互指令看（11）的表格）</li>
+</ul>
+<p>==理解：”|”表示将前面的命令结果交给后面的命令处理，cat执行后一般是将全部内容都显示出来了，而more可以对文档进行交互操作==</p>
+<h4 id="（11）查看文件内容more"><a href="#（11）查看文件内容more" class="headerlink" title="（11）查看文件内容more"></a>（11）查看文件内容more</h4><p>more指令是一个基于VI编辑器的文本过滤器，它以全屏幕的方式按页显示文本文件的内容。nore 指令中内置了若干快捷键(交互的指令)，详见操作说明</p>
+<ul>
+<li>语法：more 要查看的文件 （如more /etc/profile）</li>
+</ul>
+<p>操作说明：</p>
+<img src="https://i.loli.net/2021/04/25/fD6XhOZlzckS23y.png" alt="image-20210425222132165" style="zoom:80%;" />
+
+
+
+<h4 id="（12）查看文件内容less"><a href="#（12）查看文件内容less" class="headerlink" title="（12）查看文件内容less"></a>（12）查看文件内容less</h4><p>less 指令用来分屏查看文件内容，它的功能与more 指令类似，但是比 more指令更加强大，支持各种显示终端。less指令在显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，==对于显示大型文件具有较高的效率。==</p>
+<ul>
+<li>语法：less 要查看的文件</li>
+</ul>
+<p>操作说明：</p>
+<p><img src="https://i.loli.net/2021/04/25/RL9N1mWvoJKiZ7M.png" alt="image-20210425223611021"></p>
+<h4 id="（13）查看文件的三种指令对比"><a href="#（13）查看文件的三种指令对比" class="headerlink" title="（13）查看文件的三种指令对比"></a>（13）查看文件的三种指令对比</h4><p>cat和more结合使用最好，能够看到行号，切适用于小型文档查看。less适合查看大型文档。</p>
+<h4 id="（14）输出内容到控制台echo"><a href="#（14）输出内容到控制台echo" class="headerlink" title="（14）输出内容到控制台echo"></a>（14）输出内容到控制台echo</h4><ul>
+<li>语法：echo 内容</li>
+</ul>
+<h4 id="（15）查看文件开头内容head"><a href="#（15）查看文件开头内容head" class="headerlink" title="（15）查看文件开头内容head"></a>（15）查看文件开头内容head</h4><ul>
+<li>语法：head   文件（默认查看前10行内容）</li>
+<li>head -n 5   文件（查看头5行内容，5可以是任意数字）</li>
+</ul>
+<h4 id="（16）查看文件尾部内容tail"><a href="#（16）查看文件尾部内容tail" class="headerlink" title="（16）查看文件尾部内容tail"></a>（16）查看文件尾部内容tail</h4><ul>
+<li>语法：tail   文件（默认查看尾10行内容）</li>
+<li>tail -n 5   文件（查看尾部5行内容，5可以是任意数字）</li>
+<li>tail -f   文件 （实时追踪文档的所有更新）</li>
+</ul>
+<h4 id="（17）输出重定向-gt-和追加-gt-gt"><a href="#（17）输出重定向-gt-和追加-gt-gt" class="headerlink" title="（17）输出重定向&gt;和追加&gt;&gt;"></a>（17）输出重定向&gt;和追加&gt;&gt;</h4><ul>
+<li>语法：ls -l &gt;文件  （功能：将列表内容写入文件a.txt中，覆盖写）</li>
+<li>ls -al  &gt;&gt;  文件  （功能：将列表所有内容追加到文件aa.txt的末尾）</li>
+<li>cat  文件1 &gt; 文件2 （功能：将文件1的内容覆盖到文件2，cat是查看内容）</li>
+<li>echo “内容”  &gt;&gt; 文件（追加）</li>
+<li>==将当前日历信息追加到文件b.txt：cal &gt;&gt;b.txt==</li>
+</ul>
+<h4 id="（18）软链接ln"><a href="#（18）软链接ln" class="headerlink" title="（18）软链接ln"></a>（18）软链接ln</h4><ul>
+<li>语法：ln -s  [原文件或目录]  [软连接名] （功能：给原文件或文件夹创建一个软连接，相当于快捷方式）</li>
+<li>例：在/home下创建软连接myroot，链接到/root目录：ln -s /root  /home/myroot</li>
+</ul>
+<h4 id="（19）查看历史指令history"><a href="#（19）查看历史指令history" class="headerlink" title="（19）查看历史指令history"></a>（19）查看历史指令history</h4><ul>
+<li>语法：history （功能：查看已执行过的命令）</li>
+<li>注：history 10 （显示最近使用过的10各命令）、！5（执行历史编号为5的指令）</li>
+</ul>
+<h4 id="（20）时间日期类date"><a href="#（20）时间日期类date" class="headerlink" title="（20）时间日期类date"></a>（20）时间日期类date</h4><p>查看日期：</p>
+<ul>
+<li>date （显示当前时间）</li>
+<li>date + %Y（显示当前年份）</li>
+<li>date + %m（月份）</li>
+<li>date + %d（哪一天）</li>
+<li>date “+%Y-%m-%d %H：%M：%S”（显示年月分妙）</li>
+</ul>
+<p>设置日期：</p>
+<ul>
+<li>date -s  字符串时间</li>
+<li>例：设置时间为2020-11-03 20:02:10  ——date -s  “2020-11-03 20:02:10”</li>
+<li>cal查看当前日历，cal 2020查看2020年日历</li>
+</ul>
+<h4 id="（21）查找指令find"><a href="#（21）查找指令find" class="headerlink" title="（21）查找指令find"></a>（21）查找指令find</h4><p>find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或者目录显示在终端。</p>
+<ul>
+<li>语法：find  [搜索范围]  [选项]，选项有以下选择：</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/26/ApTVxtvQd57emCU.png" alt="image-20210426174625592"></p>
+<ul>
+<li>例：按照名字查找/home下的hello.txt：find /home  -name  hello.txt</li>
+</ul>
+<h4 id="（22）查找指令locate"><a href="#（22）查找指令locate" class="headerlink" title="（22）查找指令locate"></a>（22）查找指令locate</h4><p>由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库。</p>
+<ul>
+<li>语法：locate  搜索文件</li>
+<li>例：请使用locate指令快速定位hello.txt文件所在目录：locate hello.txt</li>
+<li>which 指令，可以查看某个指令在哪个目录下，比如 ls指令在哪个目录：which  ls</li>
+</ul>
+<h4 id="（22）过滤查找文件内容指令grep"><a href="#（22）过滤查找文件内容指令grep" class="headerlink" title="（22）过滤查找文件内容指令grep"></a>（22）过滤查找文件内容指令grep</h4><p>用于查找文档内容，过滤查找，一般结合cat查看文件和管道命令“|”使用，管道符“|”，表示将前一个命令的处理结果输出传递给后面的命令处理。</p>
+<ul>
+<li>语法：grep  -n    查找内容   源文件（显示行号）</li>
+<li>语法：grep  -i   查找内容   源文件（忽略大小写）</li>
+<li>例：在hello.txt中查找“yes”所在行，显示行号：</li>
+<li><ul>
+<li>写法1：cat /home/hello.txt | grep “yes”</li>
+<li>写法2：grep  “yes”  /home/hello.txt</li>
+</ul>
+</li>
+</ul>
+<h4 id="（23）压缩解压文件gzip和gunzip"><a href="#（23）压缩解压文件gzip和gunzip" class="headerlink" title="（23）压缩解压文件gzip和gunzip"></a>（23）压缩解压文件gzip和gunzip</h4><ul>
+<li>语法：gzip   文件（压缩，得到*.gz文件）</li>
+<li>语法：gunzip   文件 （解压） </li>
+</ul>
+<h4 id="（24）压缩解压文件或目录zip和unzip"><a href="#（24）压缩解压文件或目录zip和unzip" class="headerlink" title="（24）压缩解压文件或目录zip和unzip"></a>（24）压缩解压文件或目录zip和unzip</h4><ol>
+<li>压缩：</li>
+</ol>
+<ul>
+<li>语法1：zip  XXX.zip  要压缩的==文件==、语法2：zip  -r  XXX.zip   要压缩的==目录==（xxx为指定压缩后的名字）</li>
+</ul>
+<ol start="2">
+<li>解压：</li>
+</ol>
+<ul>
+<li>语法1：unzip XXX.zip、语法2：unzip  -d   解压后存放的目录（-d表示指定解压后的目录）</li>
+</ul>
+<h4 id="（25）压缩解压tar-gz文件指令tar"><a href="#（25）压缩解压tar-gz文件指令tar" class="headerlink" title="（25）压缩解压tar.gz文件指令tar"></a>（25）压缩解压tar.gz文件指令tar</h4><p>tar指令是打包指令，最后打包后的文件是.tar.gz 的文件</p>
+<ol>
+<li>压缩：</li>
+</ol>
+<ul>
+<li><p>tar  -zcvf  XXX.tar.gz   要打包的内容</p>
+</li>
+<li><p>例：将/home/pig.txt和 /home/cat.txt压缩成pc.tar.gz </p>
+</li>
+<li><ul>
+<li>tar  -zcvf  pc.tar.gz /home/pig.txt  /home/cat.txt</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>解压：</li>
+</ol>
+<ul>
+<li>语法1：tar  -zxvf  要解压的文件（*.tar.gz）</li>
+<li>语法2：tar  -zxvf  要解压的文件 -C  解压后存放目录（-C表示指定解压目录）</li>
+<li>例1：将pc.tar.gz解压到当前目录</li>
+<li><ul>
+<li>tar  -zxvf  pc.tar.gz</li>
+</ul>
+</li>
+<li>例2：将pc.tar.gz解压到/opt/tmp2</li>
+<li><ul>
+<li>tar  -zxvf pc.tar.gz -C  /opt/tmp2</li>
+</ul>
+</li>
+</ul>
+<h4 id="（26）三种压缩解压对比"><a href="#（26）三种压缩解压对比" class="headerlink" title="（26）三种压缩解压对比"></a>（26）三种压缩解压对比</h4><ul>
+<li>gzip/gunzip用于文件，压缩得到的文件为*.gz</li>
+<li>zip/unzip用于单个文件或单个目录（压缩目录：zip -r …、指定解压存放位置：unzip -d …）得到*.zip文件</li>
+<li>tar指令用于压缩==多个==文件和多个目录，压缩得到*.tar.gz，指定解压存放位置时用 -C</li>
+</ul>
+<h2 id="四、组管理和权限管理"><a href="#四、组管理和权限管理" class="headerlink" title="四、组管理和权限管理"></a>四、组管理和权限管理</h2><h3 id="1、Linux组的基本介绍"><a href="#1、Linux组的基本介绍" class="headerlink" title="1、Linux组的基本介绍"></a>1、Linux组的基本介绍</h3><p>每个用户必须属于一个组，不能独立于组外。一般建立用户时默认添加到用户名相同的组，组之间可以互相转换，同一个组内的成员之间的权限是不同的。==一般谁创建了该文件，谁就是该文件的所有者，且该文件与所属者属于同一个组。下图理解：==</p>
+<img src="https://i.loli.net/2021/04/26/rpsOoeFkSnCTgJ2.png" alt="image-20210426204129398" style="zoom:67%;" />
+
+<h4 id="（1）查看文件所有者"><a href="#（1）查看文件所有者" class="headerlink" title="（1）查看文件所有者"></a>（1）查看文件所有者</h4><ul>
+<li>指令：ls -ahl</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/26/YAyhPEkVnzqOt5R.png" alt="image-20210426204756877"></p>
+<h4 id="（2）修改目录-文件所有者"><a href="#（2）修改目录-文件所有者" class="headerlink" title="（2）修改目录/文件所有者"></a>（2）修改目录/文件所有者</h4><ul>
+<li>修改文件/目录所有者指令：chown   新用户名   文件名/目录名（root下，此操作只会更改目录或文件的所有者，但不会更改该目录里面的文件的所有者，实在不懂就去跑跑看）</li>
+<li>修改目录下所有文件所有者指令：chown  -R  新用户名  目录名</li>
+<li>例1：请将/home/abc.txt文件的所有者修改成tom</li>
+<li><ul>
+<li>chown tom /home/abc.txt</li>
+</ul>
+</li>
+<li>例2：请将/home/test目录下所有的文件和目录的所有者都修改成tom</li>
+<li><ul>
+<li>chown -R tom /home/test</li>
+</ul>
+</li>
+</ul>
+<h4 id="（3）创建和修改组"><a href="#（3）创建和修改组" class="headerlink" title="（3）创建和修改组"></a>（3）创建和修改组</h4><ul>
+<li>创建组：groupadd  组名</li>
+<li>创建用户并且把用户放在组中：useradd  -g  组名  用户名</li>
+<li>==修改用户所在组：usermod  -g  新组名   用户名==</li>
+<li>  查看组：ls -ahl</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/26/6rF1PREjZbwpd3u.png" alt="image-20210426205352620"></p>
+<ul>
+<li>修改文件/目录所在组：chgrp  -g  新组名  文件/目录名</li>
+</ul>
+<h4 id="（4）权限的基本介绍rwx"><a href="#（4）权限的基本介绍rwx" class="headerlink" title="（4）权限的基本介绍rwx"></a>（4）权限的基本介绍rwx</h4><ul>
+<li>查看权限命令：ls  -l 或者ll</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/26/h1znWSGPXaCxZYo.png" alt="image-20210426210538015"></p>
+<p>==0-9位说明：==</p>
+<ol>
+<li><strong>第0位确定文件类型(d,- , i , c , b)</strong></li>
+</ol>
+<ul>
+<li>-是文件</li>
+<li>I是链接，相当于windows的快捷方式</li>
+<li>d是目录，相当于windows的文件夹</li>
+<li>c是字符设备文件，鼠标，键盘</li>
+<li>b是块设备，比如硬盘</li>
+</ul>
+<ol start="2">
+<li><strong>第1-3位确定所有者（该文件的所有者）拥有该文件的权限。—User</strong></li>
+<li><strong>第4-6位确定所属组（同用户组内的其他成员)拥有该文件的权限，—Group</strong></li>
+<li><strong>第7-9位确定其他用户（其他组内的成员）拥有该文件的权限—Other</strong></li>
+</ol>
+<h4 id="（5）rwx权限详解"><a href="#（5）rwx权限详解" class="headerlink" title="（5）rwx权限详解"></a>（5）rwx权限详解</h4><ul>
+<li><strong>rwx作用到文件</strong></li>
+</ul>
+<p>1）[ r ]代表可以读（read）：可以读取、查看</p>
+<p>2）[ w ]代表可写（write）：可以修改但是不代表可以删除文件，==删除一个文件的前提条件是对该文件所在的目录有写权==</p>
+<p>3）[ x ]代表可执行（excute）：可以被执行</p>
+<ul>
+<li><strong>rwx作用到目录</strong></li>
+</ul>
+<p>1）[ r ]代表可读(read):可以读取，ls查看目录内容</p>
+<p>2）[ w ]代表可写(write):可以修改,对目录内创建+删除+重命名目录</p>
+<p>3）[ x ]代表可执行(execute);可以cd进入该目录</p>
+<ul>
+<li>详细讲解案例：</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/26/hBT9DygUJsF3K6x.png" alt="image-20210426212923827"></p>
+<ul>
+<li>可以用数字表示为：r=4，w=2，x=1，因此，rwx=4+2+1=7可以任意组合。</li>
+</ul>
+<h4 id="（6）修改权限chmod"><a href="#（6）修改权限chmod" class="headerlink" title="（6）修改权限chmod"></a>（6）修改权限chmod</h4><p><strong>方法一：用+、-、=来表示：</strong></p>
+<p>u : 所有者   g : 所有组    o : 其他人    a : 所有人(u、g、o的总和)</p>
+<ul>
+<li><p>命令：chmod u=rwx，g=rx，o=x   文件名/目录名（如果要同时修改权限，逗号不能掉）</p>
+</li>
+<li><p>例1：给abc文件的所有者读写执行权限，给所在组读和执行权限，给其他组执行权限</p>
+</li>
+<li><ul>
+<li>chmod   u=rwx , g=rx , o=x  abc</li>
+</ul>
+</li>
+<li><p>例2：给abc文件的所在组添加写权限，给其他组去掉执行权限</p>
+</li>
+<li><ul>
+<li>chmod  g+w，o-x abc</li>
+</ul>
+</li>
+</ul>
+<p><strong>方法二：用数字表示</strong></p>
+<p>r=4，w=2，x=1            rwx=4+2+1=7</p>
+<ul>
+<li>chmod u=rwx，g=rx，o=x  文件/文件名   相当于chmod  751   文件/文件名</li>
+<li>例：将/home/abc.txt文件的权限修改成rwxrw-r-x，使用给数字的方式实现:</li>
+<li><ul>
+<li>chmod 765 /home/abc.txt</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、定时任务调度"><a href="#五、定时任务调度" class="headerlink" title="五、定时任务调度"></a>五、定时任务调度</h2><h3 id="1、定时重复调度（crond）"><a href="#1、定时重复调度（crond）" class="headerlink" title="1、定时重复调度（crond）"></a>1、定时重复调度（crond）</h3><ul>
+<li>crontab -e    开始一个定时任务</li>
+<li>crontab -l      列出当前所有任务调度</li>
+<li>crontab -r      删除/终止所有任务</li>
+</ul>
+<h4 id="（1）步骤："><a href="#（1）步骤：" class="headerlink" title="（1）步骤："></a>（1）步骤：</h4><ul>
+<li><p>设置任务调度文件：/etc/crontab</p>
+</li>
+<li><p>设置个人任务调度：执行crontab -e</p>
+</li>
+<li><p>输入调度信息：如：*/1 * * * * ls -l /etc/ &gt; /tmp/to.txt  (意思是每隔1分钟执行一次：ls -l /etc/ &gt; /tmp/to.txt命令)</p>
+</li>
+<li><p>五个占位符说明：上例中*/是特殊符号，代表每隔多久执行一次。其他星号之间有空格。</p>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/05/17/1GztRurweH5oJd7.png" alt="image-20210517165359389" style="zoom: 67%;" />
+
+<ul>
+<li>特殊符号：</li>
+</ul>
+<img src="https://i.loli.net/2021/05/17/zyLBvXablGSThuW.png" alt="image-20210517165505079" style="zoom:67%;" />
+
+<ul>
+<li>相关案例：</li>
+</ul>
+<img src="https://i.loli.net/2021/05/17/kIqCyHxd4lRzPvA.png" alt="image-20210517165944348" style="zoom:67%;" />
+
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609153722174.png" alt="image-20210609153722174"></p>
+<h3 id="2、定时单次调度（atd）"><a href="#2、定时单次调度（atd）" class="headerlink" title="2、定时单次调度（atd）"></a>2、定时单次调度（atd）</h3><h4 id="（1）格式"><a href="#（1）格式" class="headerlink" title="（1）格式"></a>（1）格式</h4><ul>
+<li><p>at  【选项】 【时间】</p>
+</li>
+<li><ul>
+<li>【选项】：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609145802521.png" alt="image-20210609145802521"></p>
+<ul>
+<li><ul>
+<li>==【时间】定义规则：==</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609145951338.png" alt="image-20210609145951338"></p>
+<ul>
+<li><p><strong>退出输入模式：</strong>Ctrl +d （两次，结束内容输入，连续两次）</p>
+</li>
+<li><p>示意图：</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609145327141.png" alt="image-20210609145327141"></p>
+<h4 id="（2）查看系统中执行的工作任务"><a href="#（2）查看系统中执行的工作任务" class="headerlink" title="（2）查看系统中执行的工作任务"></a>（2）查看系统中执行的工作任务</h4><ul>
+<li>直接输入：atq</li>
+</ul>
+<h4 id="（3）案例"><a href="#（3）案例" class="headerlink" title="（3）案例"></a>（3）案例</h4><ul>
+<li>案例1： 两天后的下午五点执行  /bin / ls / home</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609150902518.png" alt="image-20210609150902518"></p>
+<ul>
+<li>案例 2： 明天17点，输出日期到指定文件内，如：/root/date.log</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609151819391.png" alt="image-20210609151819391"></p>
+<ul>
+<li>案例3：两分钟后输出时间到指定文件内：如/root/date.log</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609153033947.png" alt="image-20210609153033947"></p>
+<ul>
+<li>案例4：删除编号为4的任务号：atrm 4 //编号为4的job删除。</li>
+</ul>
+<h2 id="六、磁盘分区、挂载"><a href="#六、磁盘分区、挂载" class="headerlink" title="六、磁盘分区、挂载"></a>六、磁盘分区、挂载</h2><p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609162819282.png" alt="image-20210609162819282"></p>
+<h4 id="（1）查看硬盘信息和挂载情况"><a href="#（1）查看硬盘信息和挂载情况" class="headerlink" title="（1）查看硬盘信息和挂载情况"></a>（1）查看硬盘信息和挂载情况</h4><ul>
+<li>lsblk</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609162626010.png" alt="image-20210609162626010"></p>
+<ul>
+<li>lsblk -f</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609162001373.png" alt="image-20210609162001373"></p>
+<h4 id="（2）虚拟机内增加磁盘应用实例"><a href="#（2）虚拟机内增加磁盘应用实例" class="headerlink" title="（2）虚拟机内增加磁盘应用实例"></a>（2）虚拟机内增加磁盘应用实例</h4><p>建议直接看视频：[韩顺平学Linux-增加磁盘应用实例](<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sv411r7vd?p=59">[小白入门 通俗易懂]2021韩顺平 一周学会Linux_哔哩哔哩_bilibili</a>)</p>
+<h4 id="（3）磁盘常用指令"><a href="#（3）磁盘常用指令" class="headerlink" title="（3）磁盘常用指令"></a>（3）磁盘常用指令</h4><ul>
+<li>查看磁盘使用情况：df     -h</li>
+<li>查询指定目录的磁盘占用情况：du    -hac    –max-depth=1    ==/opt==</li>
+</ul>
+<p>==注意：/opt代表文件夹，可以换做另外的任意文件夹==</p>
+<img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609171905910.png" alt="image-20210609171905910" style="zoom:80%;" />
+
+<img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609171919981.png" alt="image-20210609171919981" style="zoom:80%;" />
+
+
+
+<h4 id="（4）磁盘情况-工作实用指令"><a href="#（4）磁盘情况-工作实用指令" class="headerlink" title="（4）磁盘情况-工作实用指令"></a>（4）磁盘情况-工作实用指令</h4><p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210609172917462.png" alt="image-20210609172917462"></p>
+<h2 id="七、Linux网络配置"><a href="#七、Linux网络配置" class="headerlink" title="七、Linux网络配置"></a>七、Linux网络配置</h2><h4 id="（1）修改网络配置"><a href="#（1）修改网络配置" class="headerlink" title="（1）修改网络配置"></a>（1）修改网络配置</h4><ul>
+<li><p>在相同的网段才能访问相关网络192.168.2._（才能ping得通）</p>
+</li>
+<li><p>Linux查看网络适配：ifconfig</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210612111811004.png" alt="image-20210612111811004"></p>
+<ul>
+<li>Windows查看网络适配：ipconfig</li>
+<li>查看虚拟网络编辑器和修改ip地址：</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210612111913443.png" alt="image-20210612111913443"></p>
+<ul>
+<li>查看网关：</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210612112000277.png" alt="image-20210612112000277"></p>
+<ul>
+<li>==一般linux会自动分配ip，点击下图的ipv4可以查看。==</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210612112110020.png" alt="image-20210612112110020"></p>
+<ul>
+<li>到工作环境后，应该用固定ip，需要手动配置固定的ip。</li>
+</ul>
+<p>==方法：==修改配置文件vim  /etc/sysconfig/network-scripts/ifcfg-ens33，例如要求将ip地址配置成静态的192.168.2.130</p>
+<ul>
+<li><ul>
+<li>ifcfg-ens33文件说明：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210612112335582.png" alt="image-20210612112335582"></p>
+<ul>
+<li><ul>
+<li>修改以下内容：</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210612112550040.png" alt="image-20210612112550040"></p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210612112459320.png"></p>
+<h4 id="（2）设置主机名和host映射"><a href="#（2）设置主机名和host映射" class="headerlink" title="（2）设置主机名和host映射"></a>（2）设置主机名和host映射</h4><p><strong>1）设置主机名</strong></p>
+<ul>
+<li>设置 主机名：为了方便记忆，可以给Linux系统设置设置主机名</li>
+<li>查看主机名指令：hostname</li>
+<li>修改主机名：vim  /etc/hostname </li>
+<li>重启生效</li>
+</ul>
+<p><strong>2）设置host映射</strong></p>
+<p>==理解：如何通过主机名能够找到(比如ping 名字，而不是IP地址)某个Linux系统？==</p>
+<ol>
+<li><strong>在windows中想要直接通过主机名访问Linux的ip</strong>(如：ping  xuechaopeng就能达到ping  192.168.2.133 的效果？)</li>
+</ol>
+<ul>
+<li>在window中C:\Windows\System32\drivers\etc\hosts 文件中直接指定即可：如直接在文件中添加：192.168.2.133   xuechaopeng</li>
+</ul>
+<ol start="2">
+<li><strong>在Linux中想要直接通过主机名访问Windows的IP地址：</strong></li>
+</ol>
+<ul>
+<li>在/etc/hosts 文件中指定即可：vim /etc/hosts，例如：192.168.2.1  Lenovo Thinkpad-PC</li>
+</ul>
+<h2 id="八、Linux进程管理"><a href="#八、Linux进程管理" class="headerlink" title="八、Linux进程管理"></a>八、Linux进程管理</h2><h4 id="（1）查看进程ps-aux"><a href="#（1）查看进程ps-aux" class="headerlink" title="（1）查看进程ps -aux"></a>（1）查看进程ps -aux</h4><ul>
+<li>指令：ps  -aux        </li>
+<li>==拓展1==：指定查看某个进程： ps   -aux |grep xxx</li>
+<li>==拓展2==：搭配more查看更高效：ps -aux |more</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615093607508.png" alt="image-20210615093607508"></p>
+<h4 id="（2）查看当前所有进程-ps-ef"><a href="#（2）查看当前所有进程-ps-ef" class="headerlink" title="（2）查看当前所有进程 ps -ef"></a>（2）查看当前所有进程 ps -ef</h4><ul>
+<li>指令：ps -ef  ，以全格式查看当前所有进程 （==可通过此查看某进程的父子进程==）</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615095119565.png" alt="image-20210615095119565"></p>
+<ul>
+<li>==拓展1==：指定查看当前某个进程：ps -ef |grep xxx</li>
+<li>==拓展2==：搭配more查看更高效：ps -ef |more</li>
+</ul>
+<h4 id="（3）终止进程kill-amp-killall"><a href="#（3）终止进程kill-amp-killall" class="headerlink" title="（3）终止进程kill &amp; killall"></a>（3）终止进程kill &amp; killall</h4><ul>
+<li><p>指令：kill     [选项]    进程号（功能：通过进程号终止进程）</p>
+</li>
+<li><p>常用选项：-9（功能：表示强迫进程立即停止）</p>
+</li>
+<li><p>指令：killall   进程名称 （功能：通过进程名称杀死进程）</p>
+</li>
+<li><p>提示：要终止某个进程之前需要用前面的指令先查看这指令的PID或者名称</p>
+</li>
+<li><p>案例：</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615100233158.png" alt="image-20210615100233158"></p>
+<h4 id="（4）查看进程树pstree"><a href="#（4）查看进程树pstree" class="headerlink" title="（4）查看进程树pstree"></a>（4）查看进程树pstree</h4><ul>
+<li><p>指令：pstree [选项] 能直观的查看进程信息；</p>
+</li>
+<li><p>常用选项：-p :显示进程的PID       -u：显示进程的所属用户</p>
+</li>
+</ul>
+<h4 id="（5）服务（service）管理"><a href="#（5）服务（service）管理" class="headerlink" title="（5）服务（service）管理"></a>（5）服务（service）管理</h4><h5 id="（1）管理指令"><a href="#（1）管理指令" class="headerlink" title="（1）管理指令"></a>（1）管理指令</h5><ol>
+<li>理解：服务本质就是进程，在后台运行，通常会监听某个端口，等待</li>
+</ol>
+<p>其他程序请求（比如：mysql，sshd，防火墙等），也称为守护进程。</p>
+<ol start="2">
+<li>管理指令：service   服务名称   [start|stop|restart|reload|status]</li>
+</ol>
+<p>[]括号内表示可以选择的内容，status意思是查看当前状态</p>
+<ol start="3">
+<li><p>在CentOS7.0后很多服务不再使用service ,而是systemctl (后面专门讲)</p>
+</li>
+<li><p>service指令管理的服务在/etc/init.d查看</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615115257694.png" alt="image-20210615115257694"></p>
+<h5 id="（2）查看服务名"><a href="#（2）查看服务名" class="headerlink" title="（2）查看服务名"></a>（2）查看服务名</h5><ul>
+<li>方式一：使用指令：setup，有星号的代表开机自启，如果想取消，光标到星号位置点击空格；点击tab键，可以选者退出</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615115526976.png" alt="image-20210615115526976"></p>
+<ul>
+<li>方式二：/etc/init.d 看到service指令管理的服务 :<strong>ls  -l  /etc/init.d</strong></li>
+</ul>
+<h5 id="（3）服务的运行级别（runlevel）"><a href="#（3）服务的运行级别（runlevel）" class="headerlink" title="（3）服务的运行级别（runlevel）"></a>（3）服务的运行级别（runlevel）</h5><ul>
+<li>三.7中有讲过，平时用的最多的是指令3和5，此处重点说明CentOS7后的运行级别说明：</li>
+</ul>
+<p>==init 3  ==  systemctl set-default multi-user.target==</p>
+<p>==init 5 == systemctl set-default graphical.target==</p>
+<ul>
+<li>查看当前默认级别：systemctl  get-default</li>
+</ul>
+<h5 id="（4）为服务设置自启-关闭chkconfig指令"><a href="#（4）为服务设置自启-关闭chkconfig指令" class="headerlink" title="（4）为服务设置自启/关闭chkconfig指令"></a>（4）为服务设置自启/关闭chkconfig指令</h5><p>注意：在CentOS7.0后，很多服务systemctl (后面讲)</p>
+<ul>
+<li><p>chkconfig指令的管理服务再/etc/init.d查看</p>
+</li>
+<li><p>用法：</p>
+</li>
+<li><ul>
+<li>查看服务：chkconfig    –list  [|grep   xxx]</li>
+</ul>
+</li>
+<li><ul>
+<li>chkconfig   服务名   –list</li>
+</ul>
+</li>
+<li><ul>
+<li>chkconfig   –level  5   服务名   on/off</li>
+</ul>
+</li>
+<li><p>细节：chkconfig指令设置后需要重启后生效</p>
+</li>
+</ul>
+<h5 id="（5）systemctl管理指令"><a href="#（5）systemctl管理指令" class="headerlink" title="==（5）systemctl管理指令=="></a>==（5）systemctl管理指令==</h5><ul>
+<li>基本语法：systemctl     [start|stop|restart|status]    服务名（注意和service对比）</li>
+</ul>
+<p>指令管理的服务可以在 /usr/lib/systemd/system查看(当不知道服务叫什么时可以查看，如防火墙之类的)</p>
+<ul>
+<li>systemctl设置服务自启状态</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615132250087.png" alt="image-20210615132250087"></p>
+<ul>
+<li><p>例子：查看当前防火墙的状况，关闭和重启防火墙（firewalld.service）</p>
+</li>
+<li><ul>
+<li>systemctl status;     systemctl  stop  firewalld;    systemctl   start   firewalld</li>
+</ul>
+</li>
+</ul>
+<h5 id="（6）打开或者关闭指定端口"><a href="#（6）打开或者关闭指定端口" class="headerlink" title="（6）打开或者关闭指定端口"></a>（6）打开或者关闭指定端口</h5><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615132701115.png" alt="image-20210615132701115" style="zoom:80%;" />
+
+<ul>
+<li>firewall指令：</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615133024257.png" alt="image-20210615133024257"></p>
+<h5 id="（7）动态监控进程top"><a href="#（7）动态监控进程top" class="headerlink" title="（7）动态监控进程top"></a>（7）动态监控进程top</h5><ul>
+<li>top指令与ps指令相似，区别在于top可以自动更新进程运行状况</li>
+<li>指令：top  [选项]</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615133433875.png" alt="image-20210615133433875"></p>
+<ul>
+<li>常用选项：</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615133530929.png" alt="image-20210615133530929"></p>
+<ul>
+<li>交互说明：</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615133554242.png" alt="image-20210615133554242"></p>
+<h5 id="（8）监控网络状态netstat（常用）"><a href="#（8）监控网络状态netstat（常用）" class="headerlink" title="（8）监控网络状态netstat（常用）"></a>（8）监控网络状态netstat（常用）</h5><ul>
+<li>语法：netstat   [选项]</li>
+<li>常用选项：-an  按照一定顺序排序输出；  -p 显示哪个进程在调用</li>
+<li>例子：请查看服务名为sshd的服务信息</li>
+<li><ul>
+<li>netstat -anp |grep sshd</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615133932208.png" alt="image-20210615133932208"></p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615133946516.png" alt="image-20210615133946516"></p>
+<p>（9）检测主机连接命令ping</p>
+<p>用于检测远程主机是否正常，或者是两部主机间的网卡网线故障，如：ping  对方ip地址。</p>
+<h2 id="九、RPM和YUM"><a href="#九、RPM和YUM" class="headerlink" title="九、RPM和YUM"></a>九、RPM和YUM</h2><h4 id="（1）RPM包管理"><a href="#（1）RPM包管理" class="headerlink" title="（1）RPM包管理"></a>（1）RPM包管理</h4><ul>
+<li><p>介绍：rpm类似于windows的setup.exe,从网上下载rpm包后，就可以通过指令在本地查看和安装。</p>
+</li>
+<li><p>RPM包简单查询</p>
+</li>
+<li><ul>
+<li>查询已安装的rpm列表：rpm  -qa </li>
+</ul>
+</li>
+<li><ul>
+<li>如：查看当前系统是否安装了Firefox：rpm -qa | grep firefox</li>
+</ul>
+</li>
+<li><p>包名的基本格式：</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615150119583.png" alt="image-20210615150119583"></p>
+<ul>
+<li><p>其他指令：</p>
+</li>
+<li><ul>
+<li>rpm  -qa:查询所有安装的rpm软件包</li>
+</ul>
+</li>
+<li><ul>
+<li>rpm -qa | more</li>
+</ul>
+</li>
+<li><ul>
+<li>rpm -qa | grep  xxx</li>
+</ul>
+</li>
+<li><ul>
+<li>rpm -q 软件包名   ：查询软件包是否安装（如：rpm -q  firefox，不用写全）</li>
+</ul>
+</li>
+<li><ul>
+<li>rpm  -qf  文件全路径名：查询文件所属的软件包（如：rpm  -qf  /etc/passwd：表示查询passwd文件属于哪个rpm包）</li>
+</ul>
+</li>
+<li><ul>
+<li>==安装rpm软件包：rpm  -ivh  软件包路径名称==（其中：i=install【安装】； v=verbose【提示】；h=hash【进度条】 ，例如安装firefox：rpm  -ivh  /opt/firefox）</li>
+</ul>
+</li>
+<li><ul>
+<li>==卸载rpm在软件包：rpm  -e  软件包名称==（若提示错误，可以强制删除：==rpm -e –nodeps  软件包名称）==</li>
+</ul>
+</li>
+</ul>
+<h4 id="（2）YUM包管理"><a href="#（2）YUM包管理" class="headerlink" title="（2）YUM包管理"></a>（2）YUM包管理</h4><ul>
+<li>介绍：yum是一个shell前端软件包管理器，基于rpm包管理，能够从指定服务器自动下载rpm包并且安装，可以自动处理依赖性关系，并且一次安装所有的软件</li>
+<li>指令：yum list  | grep xxx（先查询服务器是否有需要安装的xxx软件包）</li>
+<li>yum  install  xxx（然后再直接安装）</li>
+</ul>
+<h2 id="十、JDK-tomcat-IDEA-mysql的安装"><a href="#十、JDK-tomcat-IDEA-mysql的安装" class="headerlink" title="十、JDK,tomcat,IDEA,mysql的安装"></a>十、JDK,tomcat,IDEA,mysql的安装</h2><p>官网上下载以下软件对应的Linux版本，视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sv411r7vd?p=86">韩顺平30天学JAVA</a>良心推荐！！！</p>
+<img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615173638114.png" alt="image-20210615173638114" style="zoom:80%;" />
+
+<h4 id="（1）JDK安装"><a href="#（1）JDK安装" class="headerlink" title="（1）JDK安装"></a>（1）JDK安装</h4><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615173730227.png" alt="image-20210615173730227" style="zoom:67%;" />
+
+<h4 id="（2）tomcat安装"><a href="#（2）tomcat安装" class="headerlink" title="（2）tomcat安装"></a>（2）tomcat安装</h4><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615174000591.png" alt="image-20210615174000591" style="zoom: 67%;" />
+
+<h4 id="（3）idea2020安装"><a href="#（3）idea2020安装" class="headerlink" title="（3）idea2020安装"></a>（3）idea2020安装</h4><p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210615174110644.png" alt="image-20210615174110644"></p>
+<h4 id="（4）mysql5-7安装"><a href="#（4）mysql5-7安装" class="headerlink" title="（4）mysql5.7安装"></a>（4）mysql5.7安装</h4><ol>
+<li>新建文件夹/opt/mysql，并cd进去  </li>
+<li> 运行wget <a target="_blank" rel="noopener" href="http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar%EF%BC%8C%E4%B8%8B%E8%BD%BDmysql%E5%AE%89%E8%A3%85%E5%8C%85">http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar，下载mysql安装包</a>     PS：centos7.6自带的类mysql数据库是mariadb，会跟mysql冲突，要先删除。      </li>
+<li> 运行tar -xvf mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar</li>
+<li>  运行rpm -qa|grep mari，查询mariadb相关安装包  </li>
+<li>运行rpm -e –nodeps mariadb-libs，卸载  </li>
+<li>然后开始真正安装mysql，依次运行以下几条     rpm -ivh  mysql-community-common-5.7.26-1.el7.x86_64.rpm  rpm -ivh  mysql-community-libs-5.7.26-1.el7.x86_64.rpm  rpm -ivh  mysql-community-client-5.7.26-1.el7.x86_64.rpm  rpm -ivh  mysql-community-server-5.7.26-1.el7.x86_64.rpm   </li>
+<li>运行systemctl start mysqld.service，启动mysql  </li>
+<li>然后开始设置root用户密码  Mysql自动给root用户设置随机密码，运行grep  “password  /var/log/mysqld.log可看到当前密码    </li>
+<li>运行mysql -u root -p，用root用户登录，提示输入密码可用上述的，可以成功登陆进入mysql命令行  </li>
+<li>设置root密码，对于个人开发环境，如果要设比较简单的密码（<strong>生产环境服务器要设复杂密码</strong>），可以运行  set global validate_password_policy=0; 提示密码设置策略  （validate_password_policy默认值1，）  </li>
+<li>set  password for ‘root’@’localhost’ =password(‘123123abc’);   //123123abc  </li>
+<li>运行flush privileges;使密码设置生效，  （==笔记：我自己已改为123123abc==  ）</li>
+<li>测试密码登录使用：mysql -u root -p</li>
+</ol>
+<h2 id="十一、SHELL编程"><a href="#十一、SHELL编程" class="headerlink" title="十一、SHELL编程"></a>十一、SHELL编程</h2><ul>
+<li>简介：shell是一个命令行解释器，为用户提供一个向Linux内核发送请求以便于运行程序的界面运行级==程序==，用shell来启动、挂起、停止或者编写程序等。</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210616090422826.png" alt="image-20210616090422826"></p>
+<h4 id="（1）Shell脚本的运行方式"><a href="#（1）Shell脚本的运行方式" class="headerlink" title="（1）Shell脚本的运行方式"></a>（1）Shell脚本的运行方式</h4><ul>
+<li><p>脚本开头必须以下面代码开头：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">#!/bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>需要有执行权限（具有相应的x权限）</p>
+</li>
+</ul>
+<h4 id="（2）Shell脚本的执行方式"><a href="#（2）Shell脚本的执行方式" class="headerlink" title="（2）Shell脚本的执行方式"></a>（2）Shell脚本的执行方式</h4><ul>
+<li><p>方式一：输入脚本的相对路径或者绝对路径（需要有相应的执行权限，如:  ./hello.sh或者/root/shcode/hello.sh）</p>
+</li>
+<li><p>方式二：直接使用sh+脚本名称（不需要有x权限，直接执行即可，如：sh  hello.sh，当然也能使用其相对路径）</p>
+</li>
+</ul>
+<h4 id="（3）编写第一个Shell脚本"><a href="#（3）编写第一个Shell脚本" class="headerlink" title="（3）编写第一个Shell脚本"></a>（3）编写第一个Shell脚本</h4><ul>
+<li>需求：创建一个shell脚本，输出hello world！</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">vim hello.sh   #创建一个.sh文件，输入i开始编辑，vim用法
+
+#!/bin/bash
+echo "hello world!" #echo表示输出内容到屏幕，前面有学过
+#wq保存后，命令行执行./hello.sh即可输出内容。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="（4）Shell变量的定义"><a href="#（4）Shell变量的定义" class="headerlink" title="（4）Shell变量的定义"></a>（4）Shell变量的定义</h4><ul>
+<li><p>基本语法：  </p>
+</li>
+<li><ul>
+<li>定义变量：变量名=值（等号两边不能有空格）</li>
+</ul>
+</li>
+<li><ul>
+<li>撤销变量：unset 变量</li>
+</ul>
+</li>
+<li><ul>
+<li>声明静态便变量：readonly 变量（注意：不能unset）</li>
+</ul>
+</li>
+<li><p>举例：</p>
+</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#案例1：定义变量A
+#案例2：撤销变量A
+#案例3：声明静态变量 B=2，不能unset
+
+#!/bin/bash
+A=100            #案例1：定义变量A
+echo A=$A        #输出或者使用变量时要加上$,输出A=100
+echo "A=$A"         #和上面输出效果相同
+unset A            #案例2：撤销变量A
+echo A=$A        #输出：A=
+readonly B=2    #案例3：声明静态变量 B=2，不能unset
+echo B=$B        #输出B=2
+unset B            #报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>其他说明：1）等号两边不能有空格； 2）变量名习惯用大写，规范；3）变量名可以由字母，数字，下划线组成，不能以数字开头； </li>
+<li>将命令的返回值赋给变量</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210616101645921.png" alt="image-20210616101645921"></p>
+<h4 id="（5）设置环境变量"><a href="#（5）设置环境变量" class="headerlink" title="（5）设置环境变量"></a>（5）设置环境变量</h4><ul>
+<li>基本语法</li>
+</ul>
+<ol>
+<li><p>export   变量名=变量值（功能：将shell变量输出为环境变量/全局变量）</p>
+</li>
+<li><p>source    配置文件  （功能：让修改后的配置信息立即生效）</p>
+</li>
+</ol>
+<p>3)echo  $变量名  （功能：查询环境变量的值）</p>
+<ul>
+<li>举例：</li>
+</ul>
+<p>1）在/etc/profile文件中定义TOMCAT_HOME环境变量</p>
+<p>2）查看环境变量TOMCAT_HOME的值</p>
+<p>3）在另外一个shell程序中使用TOMCAT_HOME</p>
+<p>​    注意：在输出TOMCAT_HOME变量前，要让其生效：source  /etc/profile</p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210616141849107.png" alt="image-20210616141849107"></p>
+<ul>
+<li>shell脚本的多行注释:   :&lt;&lt;!      内容    ！</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210616114705211.png" alt="image-20210616114705211"></p>
+<h4 id="（6）位置参数变量"><a href="#（6）位置参数变量" class="headerlink" title="（6）位置参数变量"></a>（6）位置参数变量</h4><ul>
+<li>$n:（$n是数字，$0表示向屏幕输入的指令本身，$1-$9代表第一到第九个参数向屏幕输入的参数，十以上用${10},如下图：</li>
+<li>$*：表示命令行中的所有参数（不包括$0,把所有参数看作一个整体）</li>
+<li>$@：和上面一样，表示命令行中的所有参数，但是它是吧每个参数区分对待的</li>
+<li>$#：表示命令行中所有参数个数，详情仔细查看shell代码和输入输出的内容，不行就自己跑一边就懂了。</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210617100128447.png" alt="image-20210617100128447"></p>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210617100107968.png" alt="image-20210617100107968"></p>
+<h4 id="（7）运算符"><a href="#（7）运算符" class="headerlink" title="（7）运算符"></a>（7）运算符</h4><ul>
+<li>语法：”$((运算式))” 或者 “$[运算式]” 或者”expr  m + n “</li>
+<li>注意expr运算符之间都要有空格，如果要将expr的结果赋值给某个变量，则要在整体上加``反引号。</li>
+<li>expr  \ *,   /  , %     乘、除、取余</li>
+<li>更推荐方法er，其他的方法都要知道即可，仔细分析下面的代码，</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#/root/shcode/test04.sh文件夹下
+#!/bin/bash
+
+#1、求(10+20)*4的值
+
+#方法一：
+sum1=$(((10+20)*4))  #细节：方法一的式子总是要用$(())
+echo "sum1 = $sum1"
+
+#方法二：推荐
+sum2=$[(10+20)*4]
+echo "sum2 = $sum2"
+
+#方法三：注意空格,不推荐
+sum=`expr 10 + 20`
+sum0=`expr $sum \* 4`
+echo "sum3 = $sum0"
+
+
+#2、求出命令行输出的参数的和
+sum4=$[$1+$2]
+echo "sum4 = $sum4"
+#下图有输出的值：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210617105516066.png" alt="image-20210617105516066"></p>
+<h4 id="（8）条件判断"><a href="#（8）条件判断" class="headerlink" title="（8）条件判断"></a>（8）条件判断</h4><ul>
+<li><p>基本语法：[ condition ]（注意，condition前后必须有空格）</p>
+<p>​                #非空返回true，空返回false</p>
+</li>
+<li><p>案例1：[ CentOs ]     返回true；案例2： [   ]    返回false  </p>
+</li>
+<li><p>注意：[ condition ]&amp;&amp;echo OK||echo notok   条件满足执行后面的语句。</p>
+</li>
+<li><p>==判断语句汇总：==</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">（1）      =</th>
+<th align="center">字符串比较</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">（2）两个整数比较</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-lt</td>
+<td align="center">小于（little）</td>
+</tr>
+<tr>
+<td align="center">-le</td>
+<td align="center">小于等于（little equal）</td>
+</tr>
+<tr>
+<td align="center">-eq</td>
+<td align="center">等于（equal）</td>
+</tr>
+<tr>
+<td align="center">-gt</td>
+<td align="center">大与（getter）</td>
+</tr>
+<tr>
+<td align="center">-ge</td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">-ne</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">(3)按照文件权限判断</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-r</td>
+<td align="center">有读的权限</td>
+</tr>
+<tr>
+<td align="center">-w</td>
+<td align="center">有写权限</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td align="center">有执行权限</td>
+</tr>
+<tr>
+<td align="center">(4)按照文件类型进行判断</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">文件存在并且是一个常规文件</td>
+</tr>
+<tr>
+<td align="center">-e</td>
+<td align="center">文件存在</td>
+</tr>
+<tr>
+<td align="center">-d</td>
+<td align="center">文件存在并且是一个目录</td>
+</tr>
+</tbody></table>
+<ul>
+<li>案例汇总：</li>
+</ul>
+<img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210617153127905.png" alt="image-20210617153127905" style="zoom:80%;" />
+
+<h4 id="（9）流程控制"><a href="#（9）流程控制" class="headerlink" title="（9）流程控制"></a>（9）流程控制</h4><h5 id="（1）if语句："><a href="#（1）if语句：" class="headerlink" title="（1）if语句："></a>（1）if语句：</h5><ul>
+<li>语法：</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">if[ 条件判断式 ]
+then
+    代码
+fi
+
+#或者多分枝代码如下：
+if[ 条件判断式 ]
+then
+    代码
+elif[ 条件判断式 ]
+then
+    代码
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>==注意[  条件判断式  ]中前后空格不能省去==</p>
+<ul>
+<li>案例：编写脚本如果输入的参数大与60，则输出”及格了“，小于60输出”不及格“</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#!/bin/bash
+if [ $1 -ge 60 ] #注意空格，要结合前面的位置参数来用
+then
+    echo "及格了~"
+elif [ $1 -lt 60 ]
+then
+    echo "不及格"
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="（2）case语句"><a href="#（2）case语句" class="headerlink" title="（2）case语句"></a>（2）case语句</h5><ul>
+<li>语法：</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">case $变量名 in
+"值1")
+若变量值等于1，则执行程序1
+;;
+"值2")
+若变量值等于2，则执行程序2
+;;
+....省略其他分支....
+*)
+如果变量的值都不是以上的值，则执行此程序
+;;
+esac<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>案例：当参数命令是1时，输出“周一”， 是2时，输出“周二”，其他情况输出“other..”</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#!/bin/bash
+case $1 in
+"1")
+echo "周一"
+;;
+"2")
+echo "周二"
+;;
+*)
+echo  "other.."
+;;
+esac<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="（3）for循环"><a href="#（3）for循环" class="headerlink" title="（3）for循环"></a>（3）for循环</h5><ul>
+<li>语法1：</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">for  变量  in  值1 值2 值3....
+do
+程序/代码
+done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>语法2：</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">for((初始值；循环控制条件；变量变化))
+do
+程序/代码
+done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>案例1：打印命令行输入的参数（体验$*和$#的区别）</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210617165605215.png" alt="image-20210617165605215"></p>
+<ul>
+<li>案例2：打赢输出1到100的整数和</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#! /bin/bash
+sum=0
+for ((i=1; i<=100；i++))
+do
+    sum=$[$sum+$i]
+done
+echo "总和SUM是：$sum"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="（4）while语句"><a href="#（4）while语句" class="headerlink" title="（4）while语句"></a>（4）while语句</h5><ul>
+<li>基本语法：</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">while [ 条件判断式子 ]
+do
+程序/代码
+done
+#当while[ .... ]为真时，才会执行下面的代码,注意空格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="（10）read读取控制台输出"><a href="#（10）read读取控制台输出" class="headerlink" title="（10）read读取控制台输出"></a>（10）read读取控制台输出</h4><ul>
+<li><p>语法：read  【选项】 空格  参数</p>
+</li>
+<li><p>选项：-p：指定读取值时的提示符 ；   -t ：指定读取等待时间，如果没有在指定时间输入，就不再等待</p>
+</li>
+<li><p>参数：  指定读取的变量，直接看案例</p>
+</li>
+<li><p>案例1：读取控制台输入一个NUM1值</p>
+</li>
+<li><p>案例2：10秒内读取控制台输入一个NUM2值</p>
+</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#案例1：读取控制台输入一个NUM1值
+#! /bin/bash
+read -p "请输入一个NUM1=" NUM1 #注意空格
+echo "你输入的NUM1 = $NUM1"
+
+#案例2：10秒内读取控制台输入一个NUM2值
+#! /bin/bash
+read -t 10 -p "请输入一个NUM2=" NUM2
+echo "你输入的NUM2 = $NUM2"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="（11）函数"><a href="#（11）函数" class="headerlink" title="（11）函数"></a>（11）函数</h4><h5 id="（1）basename基本语法"><a href="#（1）basename基本语法" class="headerlink" title="（1）basename基本语法"></a>（1）basename基本语法</h5><ul>
+<li><p>功能：返回完整路径最后 / 的内容，常用于获取文件名。</p>
+</li>
+<li><p>案例：请返回/home/aaa/test.txt的”test.txt“部分</p>
+</li>
+<li><ul>
+<li>basename /home/aaa/test.txt</li>
+</ul>
+</li>
+</ul>
+<h5 id="（2）dirname基本语法"><a href="#（2）dirname基本语法" class="headerlink" title="（2）dirname基本语法"></a>（2）dirname基本语法</h5><ul>
+<li><p>功能:与前面刚好相反，获取最后 / 前面的部分，常用于返回路径部分，</p>
+</li>
+<li><p>案例：找到/home/aaa/test.txt的/home/aaa部分</p>
+</li>
+<li><ul>
+<li>dirname  /home/aaa/test.txt</li>
+</ul>
+</li>
+</ul>
+<h5 id="（3）自定义函数"><a href="#（3）自定义函数" class="headerlink" title="（3）自定义函数"></a>（3）自定义函数</h5><pre class="line-numbers language-shell"><code class="language-shell">#语法：
+function functionname()&#123;
+        Action
+        程序/代码：要返回的值
+&#125;
+
+直接调用函数名:functionname 值
+
+#案例：计算输入两个参数的和（动态获取），getSum
+#! /bin/bash
+function getSum()&#123;
+    sum=$[$n1+$n2]
+    echo "输入的和是：$sum"
+&#125;
+#提示输入两个值：
+read -p "请输入一个数：n1 = " n1
+read -p "请输入一个数：n2 = " n2
+#调用自定义函数：
+getSum $n1 $n2
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="十二、Ubuntu安装及详解"><a href="#十二、Ubuntu安装及详解" class="headerlink" title="十二、Ubuntu安装及详解"></a>十二、Ubuntu安装及详解</h2><h4 id="（1）虚拟机安装"><a href="#（1）虚拟机安装" class="headerlink" title="（1）虚拟机安装"></a>（1）虚拟机安装</h4><h4 id="（2）root用户介绍"><a href="#（2）root用户介绍" class="headerlink" title="（2）root用户介绍"></a>（2）root用户介绍</h4><ul>
+<li>Ubuntu安装后都是普通用户，并没有root权限，想要有高权限可以用sudo +命令 ，很麻烦，故需要用su root来切换用户，但是初次使用root是没有密码的，需要重新设定再切换才行。方法：</li>
+<li>输入sudo passwd ，设定root密码；再用su  root  再输密码即可切换到root用户。</li>
+</ul>
+<h4 id="（3）APT软件管理和远程登录"><a href="#（3）APT软件管理和远程登录" class="headerlink" title="（3）APT软件管理和远程登录"></a>（3）APT软件管理和远程登录</h4><h5 id="（1）apt包相关介绍"><a href="#（1）apt包相关介绍" class="headerlink" title="（1）apt包相关介绍"></a>（1）apt包相关介绍</h5><ul>
+<li>apt是Advanced Packaging Tool 的简称，是一款安装包管理工具。在Ubuntu下，我们可以使用apt命令进行软件包的安装、删除、清理等，类似于Windows中的软件管理工具。</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210618141851420.png" alt="image-20210618141851420"></p>
+<ul>
+<li>相关指令：</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">#常用必须掌握：（提示：已经切换到root用户，则可以不用sudo超级权限）
+sudo apt-get update  #更新源
+sudo apt-get install package  #安装包   
+sudo apt-get remove package  #删除包
+sudo apt-cache show package   #获取包的相关信息
+sudo apt-get source package   #下载该包的源代码
+==================================================
+#不常用：
+sudo apt-cache search package #搜索软件包
+sudo apt-get install package --reinstall  #重新安装包
+sudo apt-get -f install  #修复安装
+sudo apt-get remove package --purge  #删除包，包括配置文件等
+sudo apt-get build-dep package  #安装相关的编译环境
+sudo apt-get upgrade   #更新已安装的包
+sudo apt-get dist-upgrade   #升级系统
+sudo apt-cache depends package  #了解使用该包依赖那些包
+sudo apt-cache rdepends package  #查看该包被哪些包依赖
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>更新apt包下载源（国外—&gt;国内配置）</p>
+</li>
+<li><ul>
+<li>国内镜像源：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学镜像网</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210618151405049.png" alt="image-20210618151405049"></p>
+<ul>
+<li>步骤：</li>
+</ul>
+<p>1）备份ubuntu原来的配置文件(sudo cp /ect/apt/sources.list   /ect/apt/sources.list .backup )；</p>
+<p>2）再更改配置文件内容为镜像内容(vi  sources.list 删除内容并且粘贴上图左边的内容)；</p>
+<p>3）更新源地址（sudo apt-get update）</p>
+<h5 id="（2）远程登录Ubuntu"><a href="#（2）远程登录Ubuntu" class="headerlink" title="（2）远程登录Ubuntu"></a>（2）远程登录Ubuntu</h5><ul>
+<li><p>Windows登录ubuntu（ssh相关介绍）</p>
+<p>​    SSH为Secure Shell的缩写，由IETF的网络工作小组(Network Working Group）所制定;SSH为建立在应用层和传输层基础上的安全协议。</p>
+<p>​    使用SSH服务，需要安装相应的服务器和客户端。客户端和服务器的关系:如果，A机器想被B机器远程控制，那么，A机器需要安装SSH服务器，B机器需要安装SSH客户端。</p>
+</li>
+</ul>
+<img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210618155248430.png" alt="image-20210618155248430" style="zoom:80%;" />
+
+<ul>
+<li>==和CentOS 不一样，Ubuntu默认没有安装SSHD服务(使用netstat 指令查看: apt install net-tools),==可以看到没有相关的端口监听，所以要安装ssh服务器（sshd），执行：sudo apt-get install openssh-server；；安装后执行 service sshd restart 即可打开服务.</li>
+<li>通过上面步骤即可在windows客户端例如：xshell上登录链接ubuntu</li>
+</ul>
+<h5 id="（3）两台Linux互相访问"><a href="#（3）两台Linux互相访问" class="headerlink" title="（3）两台Linux互相访问"></a>（3）两台Linux互相访问</h5><ul>
+<li>语法：ssh  用户名@IP（如：ssh <a href="mailto:&#x78;&#99;&#x70;&#x40;&#x31;&#57;&#x32;&#x2e;&#x31;&#x36;&#x38;&#46;&#x32;&#48;&#48;&#x2e;&#x31;&#51;&#49;">&#x78;&#99;&#x70;&#x40;&#x31;&#57;&#x32;&#x2e;&#x31;&#x36;&#x38;&#46;&#x32;&#48;&#48;&#x2e;&#x31;&#51;&#49;</a>）</li>
+<li>注意：对于Ubuntu，相应的配置要先设置好（sshd服务器安装配置等）</li>
+</ul>
+<p>、</p>
+<h2 id="十三、日志管理"><a href="#十三、日志管理" class="headerlink" title="十三、日志管理"></a>十三、日志管理</h2><h4 id="（1）日志文件"><a href="#（1）日志文件" class="headerlink" title="（1）日志文件"></a>（1）日志文件</h4><ul>
+<li>在  /var/log 文件夹下，直接cd打开即可查看文件。</li>
+</ul>
+<h4 id="（2）常用日志及意义"><a href="#（2）常用日志及意义" class="headerlink" title="（2）常用日志及意义"></a>（2）常用日志及意义</h4><p><img src="https://gitee.com/salvatore-picture-bed/no1-drawing-bed/raw/master/img/image-20210805150600697.png" alt="image-20210805150600697"></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Shams Salvatore</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://shamssalvatore.ltd/2021/10/09/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://shamssalvatore.ltd/2021/10/09/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Shams Salvatore</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">Linux操作系统</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/reward/Aliplay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/reward/WeChat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/10/09/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="GNU/Linux学习笔记">
+                        
+                        <span class="card-title">GNU/Linux学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">Linux操作系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/22/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Hexo个人博客搭建常见问题">
+                        
+                        <span class="card-title">Hexo个人博客搭建常见问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                    博客
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">博客搭建问题</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: Salvatore<br />'
+            + 'Author: Shams Salvatore<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="122354285"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='2'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Shams Salvatore</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ShamsSalvatore" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2501280448@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2501280448" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2501280448" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+
+    <a href="https://blog.csdn.net/XYZLHL" class="tooltipped" target="_blank" data-tooltip="关注我的CSDN: https://blog.csdn.net/XYZLHL" data-position="top" data-delay="50">
+        <i class="fab fa-csdn">C</i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+   <script type="text/javascript">
+    var OriginTitile=document.title,st;
+    document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="错误网站！",clearTimeout(st)):(document.title="骗你的！！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+
+</body>
+
+</html>
